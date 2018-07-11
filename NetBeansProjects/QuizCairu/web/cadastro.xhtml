@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+         
+ <link rel="stylesheet" type="text/css"  href="../css/index.css"/>
+  <link rel="stylesheet" type="text/css"  href="../css/cadastro.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Cadastre-se</title>
+    </h:head>
+    <h:body>
+        <center style="position: relative; left:410px;" >
+            <h1>Antes de começar faça seu cadastro</h1>
+            <h:form styleClass="form">
+                
+           
+             <p:messages id="messages" showDetail="false" 
+                    autoUpdate="true" closable="true"  />
+ 
+                <h:panelGrid columns="1"  styleClass="panelGridA" >
+                    
+                    <h:outputLabel  value="Nome/Sobrenome" styleClass="outB"></h:outputLabel>
+                    <p:inputText  id="nome" value="#{alunoBean.nome}" required="true" requiredMessage="Campo Nome obrigatório"   immediate="true" size="40" maxlength="60"  />
+                    <h:outputLabel value="Matrícula" styleClass="outB"></h:outputLabel>
+                    <p:inputText value="#{alunoBean.matricula}" required="true" requiredMessage="Campo Matrícula obrigatório" immediate="true" size="40" maxlength="8" 
+				 converterMessage="Campo matrícula é Numérico.">
+                                 <f:convertNumber integerOnly="true" minIntegerDigits="1"  />
+                    </p:inputText>
+                    <h:outputLabel value="Senha" styleClass="outB"></h:outputLabel>
+                    <p:password value="#{alunoBean.senha}" required="true" requiredMessage="Campo Senha obrigatório" immediate="true" />
+                       <h:outputLabel value="Email" styleClass="outB"></h:outputLabel>
+                      <p:inputText value="#{alunoBean.email}" required="true" requiredMessage="Campo Email obrigatório" immediate="true" size="40" maxlength="40"/>
+                     <h:outputLabel value="Semestre" styleClass="outB"></h:outputLabel>
+                     <p:selectOneMenu value="#{alunoBean.semestre}"  required="true" requiredMessage="Seleção obrigatória" styleClass="select" >
+                         <h3><f:selectItem  itemValue="" itemLabel="Selecione... "/></h3>
+                        <h3><f:selectItems value="#{alunoBean.semestresComboBox}"/></h3>
+                    </p:selectOneMenu>
+                     <p:commandButton value="Cadastrar" action="#{alunoBean.adicionarAluno()}" styleClass="button">
+                       
+                    </p:commandButton>
+                </h:panelGrid>
+        </h:form>
+        </center>
+        
+    </h:body>
+</xhtml>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>QuizCairu</title>
+        <link rel="stylesheet" type="text/css"  href="../css/principal.css"/>
+
+    </h:head>
+    <h:body style="font-family: sans-serif; background: url(../imagens/fimjogo.png)">
+        <br/><br/><br/><br/><br/>
+        <h:form styleClass="form">
+            <center>
+                   <p:messages id="messages" showDetail="false" 
+                    autoUpdate="true" closable="true"  />
+                 <br/><br/><br/>
+                   
+                <h1 style="font-family: verdana; font-size: 21px;  color: whitesmoke;"><h:outputText value="#{perguntaBean.pergunta}"/></h1>
+                <br/><br/>
+           
+                <p:selectOneRadio layout="pageDirection" value="#{perguntaBean.resposta}" required="true" requiredMessage="Por favor, escolha uma opção"><br/>
+                    <h3><f:selectItem  itemValue="#{perguntaBean.opcoes.get(0)}" itemLabel="#{perguntaBean.opcoes.get(0)}"/></h3>
+                    
+                    <h3><f:selectItem itemValue="#{perguntaBean.opcoes.get(1)}" itemLabel="#{perguntaBean.opcoes.get(1)}"/></h3>
+                    
+                    <h3><f:selectItem itemValue="#{perguntaBean.opcoes.get(2)}" itemLabel="#{perguntaBean.opcoes.get(2)}"/></h3>
+                    
+                    <h3><f:selectItem itemValue="#{perguntaBean.opcoes.get(3)}" itemLabel="#{perguntaBean.opcoes.get(3)}"/></h3>
+                    
+                </p:selectOneRadio>
+                <br/><br/>
+                <p:commandButton style="border-radius: 20px; font-size: 18px;right:  24px; top: 20px;" value="Próxima >" action="#{perguntaBean.proxPergunta()}"/>&nbsp;
+                <div id="aviso"></div>
+              
+            </center>
+        </h:form>
+        <br/>
+        <h:form>
+            <center>
+                <p:commandButton style="border-radius: 20px; font-size: 16px;right:  30px; top: 20px;" id="btnSair" value="Sair" action="#{jogoBean.sair()}"/>
+            </center>
+        </h:form>
+        
+    </h:body> 
+</html>
+
+

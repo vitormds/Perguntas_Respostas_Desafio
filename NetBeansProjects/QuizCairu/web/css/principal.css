@@ -1,0 +1,18 @@
+
+body{
+  background-image: url(../imagens/fimjogo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+     
+}
+.ui-selectoneradio-item.ui-selectoneradio-item-list-item.ui-state-highlight {
+    background: #a9c6c9;
+}
+.form{
+
+
+   
+  color: whitesmoke;
+    font-family: verdana, sans-serif;
+ 
+}

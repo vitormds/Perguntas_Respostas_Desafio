@@ -1,0 +1,43 @@
+
+.tabela{
+    border: 2px solid #364983 ;
+    border-collapse: collapse;
+   
+
+   
+
+}
+
+.cabecalho {
+    
+   text-align: center;
+
+   font: 13px verdana, sans-serif;
+
+   font-weight: bold;
+
+   color: Snow;
+
+   background:  #364983;
+
+}
+
+.primeiro {
+
+   text-align: center;
+
+   font: 13px verdana, sans-serif;
+
+   background: white;
+   
+}
+
+.ultimo {
+
+   font: 13px verdana, sans-serif;
+
+   text-align: center;
+
+   background: whitesmoke;
+
+}

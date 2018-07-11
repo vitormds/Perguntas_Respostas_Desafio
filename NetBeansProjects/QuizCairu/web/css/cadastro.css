@@ -1,0 +1,29 @@
+.outB{
+    color: whitesmoke;
+    font-size: 16px;
+   
+}
+.button{
+   top: 20px;
+   color: #5b5f66;
+        border-radius: 20px;
+ right: 6px;
+ background-color: #d1e2ff; 
+ color: #3d4044;
+}
+.button:hover{
+    opacity: 0.8;
+}
+.select{
+}
+
+.form{
+  background-color: #1a8793;
+  padding-bottom:50px;
+  color: #6a7382;
+  border-radius: 20px;
+  
+}
+.label{
+    color: white;
+}

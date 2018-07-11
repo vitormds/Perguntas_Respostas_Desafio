@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+              <link rel="stylesheet" type="text/css"  href="../css/tabela.css"/>
+
+                <link rel="stylesheet" type="text/css"  href="../css/bemvindo.css"/>
+        <title>Bem-vindo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <body style=" background: url(../imagens/fimjogo.png);">
+        <f:view>
+            <center>
+                <h:form>
+                    
+                    <h1 style="font-family: verdana; font-size: 30px; font-weight: bold; color: #364983;" >Bem-vindo:<h:outputLabel  style="font-family: verdana; font-size: 30px; font-weight: bold; color:whitesmoke;" value=" #{alunoBean.aluno.nome}"/>&nbsp;</h1> 
+                    <p:commandButton value="Jogar!" rendered="#{jogoBean.ativarBotoes()}" style="border-radius: 20px;" action="#{perguntaBean.mostrarPergunta()}"/>&nbsp;
+                    <p:commandButton value="Modo Desafio" rendered="#{jogoBean.ativarBotoes()}" style="border-radius: 20px;" action="#{desafioBean.fazerDesafio()}"/>&nbsp;
+                    <p:commandButton style="border-radius: 20px;" value="Sair" action="#{alunoBean.sair()}"/>&nbsp;
+                    <br/><br/><h:outputLabel styleClass="pisca" style="font-family: verdana; font-size: 18px; font-weight: bold; color: red; " value= "Você tem #{desafioBean.desafiosPendentes} desafio(s) pendentes."  rendered="#{jogoBean.ativarBotaoDesafio()}"/>&nbsp;&nbsp;<p:commandButton style="border-radius: 20px;" value="Ver" rendered="#{jogoBean.ativarBotaoDesafio()}" action="listadesafios?faces-redirect=true"/>
+                </h:form>
+                <br/>
+                <h:panelGrid columns="2">
+                     <h:dataTable  width="=120%" id="alunosPontuacoes" value="#{alunoBean.pontuacoes}" var="ap" styleClass="tabela" headerClass="cabecalho" columnClasses="ultimo, primeiro, ultimo, primeiro">
+
+                    <f:facet name="header">
+                            MODO JOGAR
+                    </f:facet>
+                    
+                         <h:column>
+                        <f:facet name="header">
+                            <h:outputText  value="NOME"/>
+                        </f:facet> 
+                             <h:outputText  value="#{ap.nome}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="MATRÍCULA"/>
+                        </f:facet>
+                        <h:outputText value="#{ap.matricula}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="SEMESTRE"/>
+                        </f:facet>
+                        <h:outputText value="#{ap.semestre}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="ACERTOS"/>
+                        </f:facet>
+                        <h:outputText value="#{ap.acertos}"/>
+                    </h:column>
+                    
+                </h:dataTable>
+                    
+                    <h:dataTable width="110%"  id="alunosVitorias" value="#{alunoBean.alunosComVitorias}" var="av" styleClass="tabela" headerClass="cabecalho" columnClasses="ultimo, primeiro, ultimo, primeiro">
+                    <f:facet name="header">
+                            MODO DESAFIO
+                    </f:facet>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="NOME"/>
+                        </f:facet> 
+                        <h:outputText value="#{av.nome}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="MATRÍCULA"/>
+                        </f:facet>
+                        <h:outputText value="#{av.matricula}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="SEMESTRE"/>
+                        </f:facet>
+                        <h:outputText value="#{av.semestre}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="VITÓRIAS"/>
+                        </f:facet>
+                        <h:outputText value="#{av.vitorias}"/>
+                    </h:column>
+                    
+                </h:dataTable>
+                    
+                </h:panelGrid>
+            </center>
+        </f:view>
+        <script>
+            $(document).ready(function () {
+                setInterval(function () {
+                    if ($(".pisca").css("opacity") == "0.5") {
+                        $(".pisca").css("opacity", "1");
+                    } else {
+                        $(".pisca").css("opacity", "0.5");
+                    }
+                }, 250);
+            });
+            
+        </script>
+    </body>
+</html>

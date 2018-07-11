@@ -1,0 +1,18 @@
+body{
+      background: url(../imagens/fimjogo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+     
+}
+outputLabel{
+    font-family: verdana; 
+    font-size: 15px;
+}
+
+pendentes{
+    font-family: verdana; 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #008B45;
+}
+

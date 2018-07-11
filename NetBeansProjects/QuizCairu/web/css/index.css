@@ -1,0 +1,97 @@
+body{
+background-image: url(../imagens/fimjogo.png);
+background-size: 120%;
+background-repeat: no-repeat;
+width:40%;
+height: 100%;
+}
+
+
+.btn{
+    bottom:  30px;
+    left: 101%;
+    color: #5b5f66;
+      border-radius: 20px;
+       font-size: 12pt;
+       background-color: #d1e2ff;  
+      
+}
+.btn:hover{
+    opacity: 0.8;
+}
+.sqjbutton{
+    color: #5b5f66; 
+   padding: -5px;
+   border-radius: 20px;
+   background-color: #d1e2ff; 
+}
+.sqjbutton:hover{
+    opacity: 0.8;
+}
+.login{
+    position: absolute;
+    right:  100px;
+   
+}
+.esqueci{
+    color: whitesmoke;
+    font-size: 10pt;
+
+}
+h1{
+    color: #f5f5f5;
+    font-family: verdana, sans-serif ;
+      text-shadow: #1a8793 0px 0px 15px;
+}
+p{
+    color: #ffffff;
+    font-family: verdana, sans-serif ;
+    text-shadow: #1a8793 0px 0px 15px;
+}
+
+.panelGridA{
+    font-family: verdana, sans-serif;
+  right: 250px;  
+}
+
+.outA{
+    font-family: verdana, sans-serif;
+    font-size: 20px;
+    color: #364983;
+    text-shadow: 1px 0px 0px #1a8793, 
+                 -1px 0px 0px#1a8793, 
+                 0px 1px 0px #1a8793, 
+                 0px -1px 0px#1a8793;
+      
+    
+    
+}
+
+.textoBemVindo{
+    position: relative;
+    font-family: verdana, sans-serif;
+    font-size: 40px;
+    top: 40px;
+    text-shadow: 1px 0px 0px #006633, 
+                 -1px 0px 0px #006633, 
+                 0px 1px 0px #006633, 
+                 0px -1px 0px #006633;
+    color: #364983;
+}
+
+
+.subTitulo{
+    font-family: verdana, sans-serif;
+    font-size: 25px;
+    color: whitesmoke;
+/*     text-shadow: 1px 0px 0px #006633, 
+                 -1px 0px 0px #006633, 
+                 0px 1px 0px #006633, 
+                 0px -1px 0px #006633;*/
+}
+
+.formbv{
+    position: relative;
+    left: 370px;
+    top: 80px;
+}

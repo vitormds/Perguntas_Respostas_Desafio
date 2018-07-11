@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+     xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Recuperar Senha</title>
+        <link rel="stylesheet" type="text/css"  href="../css/index.css"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+            
+ 
+              
+        <h:form style="  text-align:center;  background-color: #1a8793; position: relative; left: 410px; top:200px;border-radius: 10px;" >
+
+                 <p:messages id="messages" showDetail="false" 
+                    autoUpdate="true" closable="true"/>
+                
+                <h1>Digite seu email para recuperar a senha</h1>
+                <h:outputLabel style="color: whitesmoke; font-family: verdana; font-size: 24px;" value="Email: "></h:outputLabel>
+                <p:inputText value="#{alunoBean.email}"  maxlength="40" size="40" immediate="true" required="true" requiredMessage="Por favor, digite seu email."/>
+                <p:commandButton   value="Enviar" action="#{alunoBean.enviarEmail()}"  style="margin-top: 5px;  border-radius: 20px;" styleClass="sqjbutton">
+                       
+                    </p:commandButton>
+             
+            </h:form>
+      
+        </h:body>
+</html>

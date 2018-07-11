@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Desafios</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css"  href="../css/bemvindo.css"/>
+        <link rel="stylesheet" type="text/css"  href="../css/mododesafio.css"/>
+    </h:head>
+    <body>
+        <center style="position: relative; top: 60px;">
+            <h1 style="font-family: verdana; font-size: 30px;  color:  #364983">Bem-vindo ao MODO DESAFIO</h1> 
+            <h2><h:outputLabel style="font-family: verdana; font-size: 18px; background-color: whitesmoke; color:  #364983"  value="Desafie seus amigos no nosso Quiz!"/></h2>
+             <h:outputLabel style="font-family: verdana; font-size: 14px;background-color: white;  color:  #364983" value="Escolha um amigo para ser desafiado:"/>
+            <h:form>
+                 <p:messages id="messages" showDetail="false" 
+                    autoUpdate="true" closable="true"  />
+                <p:selectOneMenu style="margin-top: 10px; " value="#{desafioBean.id_desafiado}" required="true" requiredMessage="É necessário escolher um oponente">
+                    <h3><f:selectItem itemValue="" itemLabel="Selecione..."/></h3>
+                    <h3><f:selectItems value="#{alunoBean.alunosComboBox}"/></h3>
+                </p:selectOneMenu>
+                <br/><br/>
+                <p:commandButton style="border-radius: 20px; right: 10px; font-size: 16px; " value="Desafiar!" action="#{perguntaBean.mostrarPergunta()}"></p:commandButton>
+            </h:form>
+        </center>
+    </body>
+</html>
